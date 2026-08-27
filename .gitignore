@@ -1,0 +1,16 @@
+# OS が自動生成するファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# エディタ / IDE の設定
+.vscode/
+.idea/
+*.swp
+
+# ローカル専用のツール設定（サイト本体ではないため公開しない）
+.claude/
+
+# 一時ファイル
+*.tmp
+_preview_tmp.html

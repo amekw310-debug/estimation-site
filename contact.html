@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>お問い合わせ｜SERVICE NAME</title>
+  <meta name="description" content="建築積算業務に関するお問い合わせページです。ご依頼・お見積もりのご相談はこちらのフォームからご連絡ください。">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <!-- 共通ヘッダー -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-logo" href="index.html">
+        SERVICE NAME
+        <small>建築積算サービス（仮）</small>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="global-nav" aria-label="メニューを開閉">
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+      <nav class="global-nav" id="global-nav" aria-label="メインナビゲーション">
+        <ul class="global-nav__list">
+          <li class="global-nav__item"><a class="global-nav__link" href="index.html">HOME</a></li>
+          <li class="global-nav__item"><a class="global-nav__link" href="services.html">事業内容</a></li>
+          <li class="global-nav__item"><a class="global-nav__link" href="flow.html">ご依頼の流れ</a></li>
+          <li class="global-nav__item global-nav__item--cta"><a class="btn btn--nav-cta" href="contact.html" aria-current="page">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ページ見出し帯 -->
+    <div class="page-hero">
+      <div class="container">
+        <span class="page-hero__en">Contact</span>
+        <h1 class="page-hero__title">お問い合わせ</h1>
+        <p class="page-hero__lead">
+          ご依頼・お見積もり・対応可否のご相談など、下記フォームより
+          お気軽にお問い合わせください。
+        </p>
+      </div>
+    </div>
+
+    <!-- パンくず -->
+    <div class="container">
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <ol>
+          <li><a href="index.html">HOME</a></li>
+          <li>お問い合わせ</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- フォーム -->
+    <section class="section" style="padding-top:20px">
+      <div class="container">
+
+        <div class="note-tbd" style="max-width:720px;margin:0 auto 32px">
+          <strong>ご注意：</strong>
+          現在このフォームは<strong>入力画面の見た目のみ</strong>で、
+          送信機能は実装されていません。送信ボタンを押しても内容は
+          送信されません（実際の送信処理は今後追加予定です）。
+        </div>
+
+        <!--
+          ▼ フォームについて（開発者向けメモ）
+            - action / method は未設定です。送信機能を追加する際に
+              サーバー側の送信先やメール送信サービスを設定してください。
+            - 現状は onsubmit="return false" で送信を無効化しています。
+            - 各項目の必須/任意は required 属性と .form__badge で管理。
+        -->
+        <form class="form" onsubmit="return false;" novalidate>
+
+          <!-- 会社名・屋号 -->
+          <div class="form__group">
+            <label class="form__label" for="company">
+              会社名・屋号
+              <span class="form__badge form__badge--optional">任意</span>
+            </label>
+            <input class="form__control" type="text" id="company" name="company" autocomplete="organization">
+          </div>
+
+          <!-- お名前 -->
+          <div class="form__group">
+            <label class="form__label" for="name">
+              お名前
+              <span class="form__badge form__badge--required">必須</span>
+            </label>
+            <input class="form__control" type="text" id="name" name="name" required autocomplete="name">
+          </div>
+
+          <!-- メールアドレス -->
+          <div class="form__group">
+            <label class="form__label" for="email">
+              メールアドレス
+              <span class="form__badge form__badge--required">必須</span>
+            </label>
+            <input class="form__control" type="email" id="email" name="email" required autocomplete="email">
+          </div>
+
+          <!-- 電話番号 -->
+          <div class="form__group">
+            <label class="form__label" for="tel">
+              電話番号
+              <span class="form__badge form__badge--optional">任意</span>
+            </label>
+            <input class="form__control" type="tel" id="tel" name="tel" autocomplete="tel">
+            <span class="form__hint">例：000-0000-0000</span>
+          </div>
+
+          <!-- お問い合わせ種別 -->
+          <div class="form__group">
+            <label class="form__label" for="type">
+              お問い合わせ種別
+              <span class="form__badge form__badge--required">必須</span>
+            </label>
+            <select class="form__control" id="type" name="type" required>
+              <option value="" selected>選択してください</option>
+              <option value="estimate">お見積もりのご相談</option>
+              <option value="request">ご依頼について</option>
+              <option value="feasibility">対応可否のご相談</option>
+              <option value="other">その他</option>
+            </select>
+            <span class="form__hint">※ 種別の項目は今後調整予定です。</span>
+          </div>
+
+          <!-- お問い合わせ内容 -->
+          <div class="form__group">
+            <label class="form__label" for="message">
+              お問い合わせ内容
+              <span class="form__badge form__badge--required">必須</span>
+            </label>
+            <textarea class="form__control" id="message" name="message" required></textarea>
+          </div>
+
+          <!-- 個人情報の取り扱いへの同意 -->
+          <div class="form__group">
+            <div class="form__consent">
+              <input type="checkbox" id="consent" name="consent" required>
+              <label for="consent">
+                個人情報の取り扱いに同意します
+                <span class="form__badge form__badge--required">必須</span>
+                <span class="form__hint">
+                  ※ 個人情報の取り扱いに関する記載は準備中です。確定後に
+                  リンクまたは本文を掲載します。
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 送信ボタン -->
+          <div class="form__actions">
+            <button type="submit" class="btn btn--primary btn--lg">送信する</button>
+            <p class="form__notice">
+              ※ 現在、送信機能は準備中です。押しても送信されません。
+            </p>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 共通フッター -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <p class="site-footer__brand-name">SERVICE NAME</p>
+          <p style="margin:0;color:#9aa7b5;font-size:.85rem">建築積算業務の受託サービス（仮）</p>
+        </div>
+        <nav aria-label="フッターナビゲーション">
+          <ul class="footer-nav__list">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="services.html">事業内容</a></li>
+            <li><a href="flow.html">ご依頼の流れ</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <p class="site-footer__copyright">© 2026 SERVICE NAME. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
