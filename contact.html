@@ -42,8 +42,8 @@
         <span class="page-hero__en">Contact</span>
         <h1 class="page-hero__title">お問い合わせ</h1>
         <p class="page-hero__lead">
-          ご依頼・お見積もり・対応可否のご相談など、下記フォームより
-          お気軽にお問い合わせください。
+          ご依頼・お見積もり・対応可否のご相談など、お問い合わせフォームより
+          お気軽にお問い合わせください。（フォームは現在準備中です）
         </p>
       </div>
     </div>
@@ -58,111 +58,44 @@
       </nav>
     </div>
 
-    <!-- フォーム -->
+    <!-- =======================================================
+         お問い合わせフォーム（Googleフォーム設置エリア）
+         -------------------------------------------------------
+         【開発者向けメモ：後からGoogleフォームを設定する手順】
+
+         このエリアは、後から Google フォームを紐付ける前提の構成です。
+         フォームが用意できたら、下記いずれかの方法で差し替えてください。
+
+         ■ 方法A：Googleフォームを「埋め込み」で表示する（このページ内に表示）
+           1. Googleフォーム編集画面 →「送信」→「< >」(埋め込みHTML) を開く
+           2. 表示された <iframe ...></iframe> をコピー
+           3. 下の .form-embed 内、「Googleフォームをここに設置」コメントの
+              直後にある準備中パネル（.form-placeholder）を丸ごと削除し、
+              コピーした <iframe> を貼り付ける
+           4. iframe には class="form-embed__frame" を付けると、枠に
+              ぴったり収まりレスポンシブ対応になります。幅/高さの
+              width="640" height="800" などの属性は削除してOKです。
+              例）<iframe class="form-embed__frame" src="https://docs.google.com/forms/d/e/○○○/viewform?embedded=true">読み込んでいます…</iframe>
+
+         ■ 方法B：Googleフォームへのリンクボタンにする（別タブでフォームを開く）
+           - 埋め込みではなくボタンで飛ばしたい場合は、準備中パネルを
+             下記のようなリンクボタンに置き換えてください。
+             例）<p style="text-align:center"><a class="btn btn--primary btn--lg" href="GoogleフォームのURL" target="_blank" rel="noopener">お問い合わせフォームへ</a></p>
+       ======================================================= -->
     <section class="section" style="padding-top:20px">
       <div class="container">
 
-        <div class="note-tbd" style="max-width:720px;margin:0 auto 32px">
-          <strong>ご注意：</strong>
-          現在このフォームは<strong>入力画面の見た目のみ</strong>で、
-          送信機能は実装されていません。送信ボタンを押しても内容は
-          送信されません（実際の送信処理は今後追加予定です）。
-        </div>
-
-        <!--
-          ▼ フォームについて（開発者向けメモ）
-            - action / method は未設定です。送信機能を追加する際に
-              サーバー側の送信先やメール送信サービスを設定してください。
-            - 現状は onsubmit="return false" で送信を無効化しています。
-            - 各項目の必須/任意は required 属性と .form__badge で管理。
-        -->
-        <form class="form" onsubmit="return false;" novalidate>
-
-          <!-- 会社名・屋号 -->
-          <div class="form__group">
-            <label class="form__label" for="company">
-              会社名・屋号
-              <span class="form__badge form__badge--optional">任意</span>
-            </label>
-            <input class="form__control" type="text" id="company" name="company" autocomplete="organization">
-          </div>
-
-          <!-- お名前 -->
-          <div class="form__group">
-            <label class="form__label" for="name">
-              お名前
-              <span class="form__badge form__badge--required">必須</span>
-            </label>
-            <input class="form__control" type="text" id="name" name="name" required autocomplete="name">
-          </div>
-
-          <!-- メールアドレス -->
-          <div class="form__group">
-            <label class="form__label" for="email">
-              メールアドレス
-              <span class="form__badge form__badge--required">必須</span>
-            </label>
-            <input class="form__control" type="email" id="email" name="email" required autocomplete="email">
-          </div>
-
-          <!-- 電話番号 -->
-          <div class="form__group">
-            <label class="form__label" for="tel">
-              電話番号
-              <span class="form__badge form__badge--optional">任意</span>
-            </label>
-            <input class="form__control" type="tel" id="tel" name="tel" autocomplete="tel">
-            <span class="form__hint">例：000-0000-0000</span>
-          </div>
-
-          <!-- お問い合わせ種別 -->
-          <div class="form__group">
-            <label class="form__label" for="type">
-              お問い合わせ種別
-              <span class="form__badge form__badge--required">必須</span>
-            </label>
-            <select class="form__control" id="type" name="type" required>
-              <option value="" selected>選択してください</option>
-              <option value="estimate">お見積もりのご相談</option>
-              <option value="request">躯体積算のご依頼</option>
-              <option value="feasibility">対応可否のご相談（杭・外構・概算・解体など）</option>
-              <option value="other">その他</option>
-            </select>
-          </div>
-
-          <!-- お問い合わせ内容 -->
-          <div class="form__group">
-            <label class="form__label" for="message">
-              お問い合わせ内容
-              <span class="form__badge form__badge--required">必須</span>
-            </label>
-            <textarea class="form__control" id="message" name="message" required></textarea>
-          </div>
-
-          <!-- 個人情報の取り扱いへの同意 -->
-          <div class="form__group">
-            <div class="form__consent">
-              <input type="checkbox" id="consent" name="consent" required>
-              <label for="consent">
-                個人情報の取り扱いに同意します
-                <span class="form__badge form__badge--required">必須</span>
-                <span class="form__hint">
-                  ※ 個人情報の取り扱いに関する記載は準備中です。確定後に
-                  リンクまたは本文を掲載します。
-                </span>
-              </label>
-            </div>
-          </div>
-
-          <!-- 送信ボタン -->
-          <div class="form__actions">
-            <button type="submit" class="btn btn--primary btn--lg">送信する</button>
-            <p class="form__notice">
-              ※ 現在、送信機能は準備中です。押しても送信されません。
+        <div class="form-embed">
+          <!-- Googleフォームをここに設置 -->
+          <div class="form-placeholder">
+            <p class="form-placeholder__title">お問い合わせフォームは現在準備中です</p>
+            <p class="form-placeholder__text">
+              準備が整い次第、こちらからお問い合わせいただけます。
+              いましばらくお待ちください。
             </p>
           </div>
+        </div>
 
-        </form>
       </div>
     </section>
 

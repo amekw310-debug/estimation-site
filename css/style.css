@@ -731,6 +731,53 @@ select.form__control {
   color: var(--color-text-muted);
 }
 
+/* --- Googleフォーム埋め込みエリア（レスポンシブ枠） ---
+   ここに Google フォームの <iframe class="form-embed__frame"> を
+   設置すると、PC・スマホの両方で幅いっぱいに崩れず表示されます。 */
+.form-embed {
+  max-width: 720px;
+  margin-inline: auto;
+}
+/* 埋め込む iframe 本体。幅は枠いっぱい、高さは内容に応じて指定 */
+.form-embed__frame {
+  display: block;
+  width: 100%;
+  min-height: 800px;   /* フォームの長さに合わせて調整してください */
+  border: 0;
+}
+
+/* --- フォーム準備中の仮パネル ---
+   Google フォーム設置後は、このパネル（.form-placeholder）を
+   削除して <iframe> に差し替えてください。 */
+.form-placeholder {
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--color-bg-subtle);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+}
+.form-placeholder__title {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+.form-placeholder__text {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* スマホでは埋め込みフォームの高さをやや抑える */
+@media (max-width: 768px) {
+  .form-embed__frame {
+    min-height: 700px;
+  }
+  .form-placeholder {
+    padding: 36px 18px;
+  }
+}
+
 /* =============================================================
    9. レスポンシブ
    ============================================================= */
