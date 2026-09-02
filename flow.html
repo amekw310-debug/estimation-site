@@ -8,6 +8,8 @@
   <meta name="description" content="K.seq のご依頼の流れ。お問い合わせから数量の算出、内訳書と計算書等の添付書類の納品までの手順をご紹介します。初めての方にも分かりやすく、迅速に対応します。">
 
   <link rel="stylesheet" href="css/style.css">
+  <!-- スクロール表示前に要素を隠す（ちらつき防止）。JS無効・動きを控える設定では付与されず、内容は常に表示されます。 -->
+  <script>try{if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){document.documentElement.classList.add('js-anim');}}catch(e){}</script>
 </head>
 <body>
 
@@ -38,13 +40,13 @@
 
     <!-- ページ見出し帯 -->
     <div class="page-hero grid-bg">
-      <div class="container page-hero__inner">
-        <p class="page-hero__eyebrow">
+      <div class="container page-hero__inner" data-stagger>
+        <p class="page-hero__eyebrow reveal">
           <span class="page-hero__no">03</span>
           <span class="page-hero__en">Flow</span>
         </p>
-        <h1 class="page-hero__title">ご依頼の流れ</h1>
-        <p class="page-hero__lead">
+        <h1 class="page-hero__title reveal">ご依頼の流れ</h1>
+        <p class="page-hero__lead reveal">
           お問い合わせから、数量の算出、内訳書と添付書類の納品までの流れです。
           初めてご依頼される事業者さまにも分かりやすい手順で対応します。
         </p>
@@ -65,14 +67,14 @@
     <section class="section">
       <div class="container">
 
-        <div class="note" style="max-width:820px;margin-bottom:40px">
+        <div class="note reveal" style="max-width:820px;margin-bottom:40px">
           <strong>注：</strong>
           対応するのは躯体工事（土・コンクリート・型枠・鉄筋）の数量拾い出しです。
           仮設・鉄骨・仕上・設備工事は対応しておりません。
         </div>
 
-        <ol class="flow">
-          <li class="flow__item">
+        <ol class="flow" data-stagger>
+          <li class="flow__item reveal">
             <span class="flow__marker" aria-hidden="true">
               <span class="flow__step">Step</span>
               <span class="flow__no"></span>
@@ -84,7 +86,7 @@
               </p>
             </div>
           </li>
-          <li class="flow__item">
+          <li class="flow__item reveal">
             <span class="flow__marker" aria-hidden="true">
               <span class="flow__step">Step</span>
               <span class="flow__no"></span>
@@ -97,7 +99,7 @@
               </p>
             </div>
           </li>
-          <li class="flow__item">
+          <li class="flow__item reveal">
             <span class="flow__marker" aria-hidden="true">
               <span class="flow__step">Step</span>
               <span class="flow__no"></span>
@@ -109,7 +111,7 @@
               </p>
             </div>
           </li>
-          <li class="flow__item">
+          <li class="flow__item reveal">
             <span class="flow__marker" aria-hidden="true">
               <span class="flow__step">Step</span>
               <span class="flow__no"></span>
@@ -122,7 +124,7 @@
               </p>
             </div>
           </li>
-          <li class="flow__item">
+          <li class="flow__item reveal">
             <span class="flow__marker" aria-hidden="true">
               <span class="flow__step">Step</span>
               <span class="flow__no"></span>
@@ -134,7 +136,7 @@
               </p>
             </div>
           </li>
-          <li class="flow__item">
+          <li class="flow__item reveal">
             <span class="flow__marker" aria-hidden="true">
               <span class="flow__step">Step</span>
               <span class="flow__no"></span>
@@ -152,22 +154,22 @@
 
         <!-- ご依頼にあたって -->
         <div class="split" style="margin-top:64px">
-          <div class="sec-head">
-            <span class="sec-head__label">
+          <div class="sec-head" data-stagger>
+            <span class="sec-head__label reveal">
               <span class="sec-head__no">—</span>
               <span class="sec-head__en">Notes</span>
             </span>
-            <h2 class="sec-head__ja">ご依頼にあたって</h2>
+            <h2 class="sec-head__ja reveal">ご依頼にあたって</h2>
             <span class="sec-head__rule" aria-hidden="true"></span>
           </div>
           <div>
-            <ul class="point">
-              <li><strong>対応工種</strong>：土工事・コンクリート工事・型枠工事・鉄筋工事（工種ごとの単独依頼も可）。</li>
-              <li><strong>その他の対応</strong>：杭工事・外構工事はご相談により対応。躯体概算、解体工事（躯体範囲）も対応可能です。</li>
-              <li><strong>内訳書の書式</strong>：ご指定の書式でも、指定なしでも対応します。</li>
-              <li><strong>お見積もり</strong>：積算事務所に依頼するより、お安く数量積算いたします。</li>
-              <li><strong>インボイスについて</strong>：適格請求書発行事業者（インボイス）には登録しておりません。</li>
-              <li><strong>納期・データ形式</strong>：ご依頼内容により異なりますので、お問い合わせ時にご相談ください。早急な対応もできます。</li>
+            <ul class="point" data-stagger>
+              <li class="reveal"><strong>対応工種</strong>：土工事・コンクリート工事・型枠工事・鉄筋工事（工種ごとの単独依頼も可）。</li>
+              <li class="reveal"><strong>その他の対応</strong>：杭工事・外構工事はご相談により対応。躯体概算、解体工事（躯体範囲）も対応可能です。</li>
+              <li class="reveal"><strong>内訳書の書式</strong>：ご指定の書式でも、指定なしでも対応します。</li>
+              <li class="reveal"><strong>お見積もり</strong>：積算事務所に依頼するより、お安く数量積算いたします。</li>
+              <li class="reveal"><strong>インボイスについて</strong>：適格請求書発行事業者（インボイス）には登録しておりません。</li>
+              <li class="reveal"><strong>納期・データ形式</strong>：ご依頼内容により異なりますので、お問い合わせ時にご相談ください。早急な対応もできます。</li>
             </ul>
           </div>
         </div>
@@ -177,14 +179,14 @@
 
     <!-- CTA -->
     <section class="cta on-dark">
-      <div class="container cta__inner">
-        <div>
+      <div class="container cta__inner" data-stagger>
+        <div class="reveal">
           <p class="cta__eyebrow">Contact</p>
           <h2 class="cta__title">まずはお気軽にお問い合わせください</h2>
           <p class="cta__text">ご依頼の可否やお見積もりのご相談を承ります。</p>
         </div>
-        <div class="cta__actions">
-          <a class="btn btn--primary btn--lg" href="contact.html">お問い合わせはこちら</a>
+        <div class="cta__actions reveal">
+          <a class="btn btn--primary btn--lg btn--arrow" href="contact.html">お問い合わせはこちら</a>
         </div>
       </div>
     </section>

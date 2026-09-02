@@ -8,6 +8,8 @@
   <meta name="description" content="K.seq へのお問い合わせページです。建築構造積算の数量算出・お見積もり・対応可否のご相談は、こちらのフォームからご連絡ください。">
 
   <link rel="stylesheet" href="css/style.css">
+  <!-- スクロール表示前に要素を隠す（ちらつき防止）。JS無効・動きを控える設定では付与されず、内容は常に表示されます。 -->
+  <script>try{if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){document.documentElement.classList.add('js-anim');}}catch(e){}</script>
 </head>
 <body>
 
@@ -38,13 +40,13 @@
 
     <!-- ページ見出し帯 -->
     <div class="page-hero grid-bg">
-      <div class="container page-hero__inner">
-        <p class="page-hero__eyebrow">
+      <div class="container page-hero__inner" data-stagger>
+        <p class="page-hero__eyebrow reveal">
           <span class="page-hero__no">04</span>
           <span class="page-hero__en">Contact</span>
         </p>
-        <h1 class="page-hero__title">お問い合わせ</h1>
-        <p class="page-hero__lead">
+        <h1 class="page-hero__title reveal">お問い合わせ</h1>
+        <p class="page-hero__lead reveal">
           ご依頼・お見積もり・対応可否のご相談など、お問い合わせフォームより
           お気軽にお問い合わせください。（フォームは現在準備中です）
         </p>
@@ -88,7 +90,7 @@
     <section class="section">
       <div class="container">
 
-        <div class="form-embed">
+        <div class="form-embed reveal">
           <!-- Googleフォームをここに設置 -->
           <div class="form-placeholder">
             <p class="form-placeholder__title">お問い合わせフォームは現在準備中です</p>

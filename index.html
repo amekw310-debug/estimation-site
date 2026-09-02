@@ -10,6 +10,8 @@
   <!-- ▲ ------------------------------------------------------- -->
 
   <link rel="stylesheet" href="css/style.css">
+  <!-- スクロール表示前に要素を隠す（ちらつき防止）。JS無効・動きを控える設定では付与されず、内容は常に表示されます。 -->
+  <script>try{if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){document.documentElement.classList.add('js-anim');}}catch(e){}</script>
 </head>
 <body>
 
@@ -50,20 +52,20 @@
          メインビジュアル（ヒーロー・図面グリッド背景）
          ======================================================= -->
     <section class="hero grid-bg">
-      <div class="container hero__inner">
-        <p class="hero__eyebrow eyebrow">Structural Cost Estimation</p>
-        <h1 class="hero__title">
+      <div class="container hero__inner" data-stagger>
+        <p class="hero__eyebrow eyebrow reveal">Structural Cost Estimation</p>
+        <h1 class="hero__title reveal">
           建築構造積算を、<br>
           <span class="accent">業務委託</span>でお引き受けします。
         </h1>
-        <p class="hero__text">
+        <p class="hero__text reveal">
           建築積算基準に沿って数量を算出し、所定の内訳書への転記から、
           独自の内訳書の作成までを承ります。個人ならではの、丁寧で
           柔軟な対応を大切にしています。
         </p>
-        <div class="hero__actions">
+        <div class="hero__actions reveal">
           <a class="btn btn--primary btn--lg" href="contact.html">お問い合わせ</a>
-          <a class="btn btn--outline btn--lg" href="services.html">事業内容を見る</a>
+          <a class="btn btn--outline btn--lg btn--arrow" href="services.html">事業内容を見る</a>
         </div>
       </div>
     </section>
@@ -73,21 +75,21 @@
          ======================================================= -->
     <section class="section">
       <div class="container split">
-        <div class="sec-head">
-          <span class="sec-head__label">
+        <div class="sec-head" data-stagger>
+          <span class="sec-head__label reveal">
             <span class="sec-head__no">01</span>
             <span class="sec-head__en">About</span>
           </span>
-          <h2 class="sec-head__ja">K.seqについて</h2>
+          <h2 class="sec-head__ja reveal">K.seqについて</h2>
           <span class="sec-head__rule" aria-hidden="true"></span>
         </div>
-        <div class="prose">
-          <p>
+        <div class="prose" data-stagger>
+          <p class="reveal">
             K.seq は、個人で建築構造積算を業務委託により請け負っております。
             図面や仕様書をもとに建築積算基準に沿って数量を算出し、
             所定の内訳書への転記から、独自の内訳書の作成までを承ります。
           </p>
-          <p>
+          <p class="reveal">
             繁忙期のスポット対応や、一部工種のみのご依頼にも柔軟に対応します。
             迅速かつ丁寧な仕事で、末長くお付き合いいただける関係を目指します。
           </p>
@@ -100,41 +102,41 @@
          ======================================================= -->
     <section class="section section--alt">
       <div class="container split">
-        <div class="sec-head">
-          <span class="sec-head__label">
+        <div class="sec-head" data-stagger>
+          <span class="sec-head__label reveal">
             <span class="sec-head__no">02</span>
             <span class="sec-head__en">Services</span>
           </span>
-          <h2 class="sec-head__ja">対応する躯体工事</h2>
+          <h2 class="sec-head__ja reveal">対応する躯体工事</h2>
           <span class="sec-head__rule" aria-hidden="true"></span>
         </div>
         <div>
-          <p class="lead">
+          <p class="lead reveal">
             躯体工事の数量拾い出しに対応します。各工種は単独でのご依頼も可能です。
           </p>
-          <ul class="spec spec--cols" style="margin-top:32px">
-            <li class="spec__item">
+          <ul class="spec spec--cols" data-stagger style="margin-top:32px">
+            <li class="spec__item reveal">
               <span class="spec__no">01</span>
               <div class="spec__body">
                 <h3 class="spec__title">土工事</h3>
                 <p class="spec__text">根切り・埋戻し・残土などの数量を拾い出します。単独依頼も可。</p>
               </div>
             </li>
-            <li class="spec__item">
+            <li class="spec__item reveal">
               <span class="spec__no">02</span>
               <div class="spec__body">
                 <h3 class="spec__title">コンクリート工事</h3>
                 <p class="spec__text">各部位のコンクリート数量を拾い出します。単独依頼も可。</p>
               </div>
             </li>
-            <li class="spec__item">
+            <li class="spec__item reveal">
               <span class="spec__no">03</span>
               <div class="spec__body">
                 <h3 class="spec__title">型枠工事</h3>
                 <p class="spec__text">型枠の数量を建築積算基準に沿って拾い出します。</p>
               </div>
             </li>
-            <li class="spec__item">
+            <li class="spec__item reveal">
               <span class="spec__no">04</span>
               <div class="spec__body">
                 <h3 class="spec__title">鉄筋工事</h3>
@@ -143,13 +145,13 @@
             </li>
           </ul>
 
-          <div class="note" style="margin-top:28px">
+          <div class="note reveal" style="margin-top:28px">
             <strong>対応不可の工種：</strong>
             仮設工事・鉄骨工事・仕上工事・設備工事は対応しておりません。
           </div>
 
-          <p style="margin-top:32px">
-            <a class="btn btn--outline" href="services.html">事業内容を詳しく見る</a>
+          <p class="reveal" style="margin-top:32px">
+            <a class="btn btn--outline btn--arrow" href="services.html">事業内容を詳しく見る</a>
           </p>
         </div>
       </div>
@@ -160,17 +162,17 @@
          ======================================================= -->
     <section class="section">
       <div class="container split">
-        <div class="sec-head">
-          <span class="sec-head__label">
+        <div class="sec-head" data-stagger>
+          <span class="sec-head__label reveal">
             <span class="sec-head__no">03</span>
             <span class="sec-head__en">Features</span>
           </span>
-          <h2 class="sec-head__ja">こんな方に</h2>
+          <h2 class="sec-head__ja reveal">こんな方に</h2>
           <span class="sec-head__rule" aria-hidden="true"></span>
         </div>
         <div>
-          <ul class="spec spec--auto">
-            <li class="spec__item">
+          <ul class="spec spec--auto" data-stagger>
+            <li class="spec__item reveal">
               <span class="spec__no"></span>
               <div class="spec__body">
                 <h3 class="spec__title">躯体だけ頼みたい方</h3>
@@ -180,7 +182,7 @@
                 </p>
               </div>
             </li>
-            <li class="spec__item">
+            <li class="spec__item reveal">
               <span class="spec__no"></span>
               <div class="spec__body">
                 <h3 class="spec__title">コストを抑えたい方</h3>
@@ -190,7 +192,7 @@
                 </p>
               </div>
             </li>
-            <li class="spec__item">
+            <li class="spec__item reveal">
               <span class="spec__no"></span>
               <div class="spec__body">
                 <h3 class="spec__title">迅速・丁寧な対応を求める方</h3>
@@ -210,17 +212,17 @@
          ======================================================= -->
     <section class="section section--alt">
       <div class="container split">
-        <div class="sec-head">
-          <span class="sec-head__label">
+        <div class="sec-head" data-stagger>
+          <span class="sec-head__label reveal">
             <span class="sec-head__no">04</span>
             <span class="sec-head__en">Flow</span>
           </span>
-          <h2 class="sec-head__ja">ご依頼の流れ</h2>
+          <h2 class="sec-head__ja reveal">ご依頼の流れ</h2>
           <span class="sec-head__rule" aria-hidden="true"></span>
         </div>
         <div>
-          <ol class="flow">
-            <li class="flow__item">
+          <ol class="flow" data-stagger>
+            <li class="flow__item reveal">
               <span class="flow__marker" aria-hidden="true">
                 <span class="flow__step">Step</span>
                 <span class="flow__no"></span>
@@ -230,7 +232,7 @@
                 <p class="flow__text">お問い合わせフォームよりご連絡ください。</p>
               </div>
             </li>
-            <li class="flow__item">
+            <li class="flow__item reveal">
               <span class="flow__marker" aria-hidden="true">
                 <span class="flow__step">Step</span>
                 <span class="flow__no"></span>
@@ -240,7 +242,7 @@
                 <p class="flow__text">ご依頼内容と図面を確認し、お見積もりをご提示します。</p>
               </div>
             </li>
-            <li class="flow__item">
+            <li class="flow__item reveal">
               <span class="flow__marker" aria-hidden="true">
                 <span class="flow__step">Step</span>
                 <span class="flow__no"></span>
@@ -251,8 +253,8 @@
               </div>
             </li>
           </ol>
-          <p style="margin-top:32px">
-            <a class="btn btn--outline" href="flow.html">ご依頼の流れを詳しく見る</a>
+          <p class="reveal" style="margin-top:32px">
+            <a class="btn btn--outline btn--arrow" href="flow.html">ご依頼の流れを詳しく見る</a>
           </p>
         </div>
       </div>
@@ -262,8 +264,8 @@
          お問い合わせCTA
          ======================================================= -->
     <section class="cta on-dark">
-      <div class="container cta__inner">
-        <div>
+      <div class="container cta__inner" data-stagger>
+        <div class="reveal">
           <p class="cta__eyebrow">Contact</p>
           <h2 class="cta__title">積算のご相談・お見積もり</h2>
           <p class="cta__text">
@@ -271,8 +273,8 @@
             早急な対応もできますので、まずはご連絡ください。
           </p>
         </div>
-        <div class="cta__actions">
-          <a class="btn btn--primary btn--lg" href="contact.html">お問い合わせはこちら</a>
+        <div class="cta__actions reveal">
+          <a class="btn btn--primary btn--lg btn--arrow" href="contact.html">お問い合わせはこちら</a>
         </div>
       </div>
     </section>
