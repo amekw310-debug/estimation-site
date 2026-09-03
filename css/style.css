@@ -41,7 +41,7 @@
   --line-2:       #b7b4ab;  /* やや濃い罫線 */
   --accent:       #c15a24;  /* アクセント（オレンジ・柿／朱寄せ） */
   --accent-2:     #9c4419;  /* アクセントの濃い版（ホバー等） */
-  --grid-line:    rgba(34, 52, 86, 0.055); /* 図面グリッドの線（藍みがかる） */
+  --grid-line:    rgba(34, 52, 86, 0.11); /* 図面グリッドの線（藍みがかる） */
 
   /* --- フォント --- */
   --font-jp: "Hiragino Kaku Gothic ProN", "Hiragino Sans",
