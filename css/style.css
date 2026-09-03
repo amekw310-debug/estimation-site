@@ -265,15 +265,31 @@ select:focus-visible {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(244, 243, 239, 0.92);
-  backdrop-filter: saturate(120%) blur(6px);
+  background: rgba(244, 243, 239, 0.95);
   border-bottom: 1px solid var(--line);
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+/* すりガラス効果は横並びナビのPC幅のみ。
+   （モバイルのドロワーは position:fixed のため、ヘッダーに
+    backdrop-filter があると配置基準がヘッダー内に閉じてしまう） */
+@media (min-width: 1081px) {
+  .site-header {
+    background: rgba(244, 243, 239, 0.92);
+    backdrop-filter: saturate(120%) blur(6px);
+    -webkit-backdrop-filter: saturate(120%) blur(6px);
+  }
 }
 /* スクロール後：背景をやや不透明に＋わずかな影でコンテンツと区別 */
 .site-header.is-scrolled {
   background: rgba(244, 243, 239, 0.97);
   box-shadow: 0 6px 20px rgba(34, 52, 86, 0.08);
+}
+
+/* アンカーリンク移動時、固定ヘッダーの下に見出しが隠れないよう余白を確保 */
+.hero[id],
+.section[id],
+.cta[id] {
+  scroll-margin-top: calc(var(--header-height) + 20px);
 }
 .site-header__inner {
   display: flex;
@@ -308,7 +324,8 @@ select:focus-visible {
 .global-nav__list {
   display: flex;
   align-items: center;
-  gap: 34px;
+  flex-wrap: nowrap;
+  gap: 22px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -316,9 +333,10 @@ select:focus-visible {
 .global-nav__link {
   position: relative;
   color: var(--ink-2);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 500;
   padding: 6px 0;
+  white-space: nowrap;
 }
 .global-nav__link:hover { color: var(--ink); text-decoration: none; }
 /* ホバー・現在ページで下線が左から伸びる */
@@ -458,18 +476,19 @@ select:focus-visible {
   background: transparent;
 }
 
-/* ヘッダー内の「お問い合わせ」CTAボタン */
+/* ヘッダー内の「問い合わせ」CTAボタン（ネイビー基本＋ホバーでオレンジ） */
 .btn--nav-cta {
-  padding: 9px 20px;
+  padding: 9px 18px;
   font-size: 0.85rem;
-  background: transparent;
-  color: var(--ink);
-  border-color: var(--ink);
-}
-.btn--nav-cta:hover {
   background: var(--ink);
   color: var(--paper);
   border-color: var(--ink);
+  white-space: nowrap;
+}
+.btn--nav-cta:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
 }
 
 .btn--lg {
@@ -854,41 +873,49 @@ select:focus-visible {
   .cta__inner { flex-direction: column; align-items: flex-start; }
 }
 
-/* --- タブレット小・大型スマホ --- */
-@media (max-width: 768px) {
+/* --- ナビ：横並びが窮屈になる幅でハンバーガー（ドロワー）へ切替 ---
+   ナビ項目が6つあるため、1080px 以下でドロワー表示にします。 */
+@media (max-width: 1080px) {
   /* ハンバーガーボタンを表示 */
   .nav-toggle { display: block; }
 
-  /* ナビをドロワー（開閉式）に */
+  /* ナビをドロワー（開閉式）に。開いた時は明るい背景＋藍文字 */
   .global-nav {
     position: fixed;
     top: var(--header-height);
     left: 0; right: 0; bottom: 0;
     background: var(--paper);
     border-top: 1px solid var(--line);
-    transform: translateX(100%);
-    transition: transform var(--transition);
+    /* 閉じている時は画面外（左）へ。右に出すと横スクロールが発生するため左へ退避 */
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform var(--transition), visibility 0s linear var(--transition);
     overflow-y: auto;
   }
-  .global-nav[data-open="true"] { transform: translateX(0); }
+  .global-nav[data-open="true"] {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform var(--transition), visibility 0s;
+  }
 
   .global-nav__list {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 8px var(--gutter);
+    padding: 8px var(--gutter) 24px;
   }
   .global-nav__item { border-bottom: 1px solid var(--line); }
   .global-nav__link {
     display: block;
     padding: 18px 4px;
     font-size: 1.05rem;
+    color: var(--ink);
   }
   .global-nav__link::after { display: none; }
-  .global-nav__link[aria-current="page"] { color: var(--accent); }
+  /* 問い合わせCTAはドロワー内でも塗りボタンで目立たせる */
   .global-nav__item--cta {
     border-bottom: none;
-    padding: 18px 0;
+    padding: 20px 0 4px;
   }
   .btn--nav-cta {
     display: flex;
@@ -896,7 +923,10 @@ select:focus-visible {
     padding: 15px;
     font-size: 1rem;
   }
+}
 
+/* --- タブレット小・大型スマホ（レイアウト調整） --- */
+@media (max-width: 768px) {
   /* スペック表を1カラムに */
   .spec--cols { grid-template-columns: 1fr; border-top: 1px solid var(--line-2); }
   .spec--cols .spec__item:first-child { border-top: none; }
