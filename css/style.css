@@ -414,6 +414,31 @@ select:focus-visible {
   text-transform: uppercase;
   color: #8a90a1;
 }
+
+/* Instagram リンク（線画アイコン＋ハンドル） */
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: #c2c8d4;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  transition: color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+}
+.footer-social__icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex-shrink: 0;
+}
+.footer-social:hover {
+  color: #fff;                 /* 少し色が変化 */
+  transform: translateY(-2px); /* わずかに上へ */
+  opacity: 0.92;               /* opacity が変化 */
+  text-decoration: none;
+}
 .footer-nav__list {
   list-style: none;
   margin: 0; padding: 0;
