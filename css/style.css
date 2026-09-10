@@ -1289,3 +1289,16 @@ select:focus-visible {
   .stat { padding: 18px 0; }
   .sample__img { height: 260px; }
 }
+
+/* --- 内訳書サンプルの案件別グループ --- */
+.sample-group + .sample-group { margin-top: 30px; }
+.sample-group__title {
+  margin: 0 0 14px;
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+.sample-group .samples { margin-top: 0; }
