@@ -61,8 +61,8 @@
         </p>
         <h1 class="page-hero__title reveal">お問い合わせ</h1>
         <p class="page-hero__lead reveal">
-          ご依頼・お見積もり・対応可否のご相談など、お問い合わせフォームより
-          お気軽にお問い合わせください。（フォームは現在準備中です）
+          ご依頼・お見積もり・対応可否のご相談など、下記メールより
+          お気軽にお問い合わせください。
         </p>
       </div>
     </div>
@@ -78,41 +78,31 @@
     </div>
 
     <!-- =======================================================
-         お問い合わせフォーム（Googleフォーム設置エリア）
+         お問い合わせ（メール）
          -------------------------------------------------------
-         【開発者向けメモ：後からGoogleフォームを設定する手順】
-
-         このエリアは、後から Google フォームを紐付ける前提の構成です。
-         フォームが用意できたら、下記いずれかの方法で差し替えてください。
-
-         ■ 方法A：Googleフォームを「埋め込み」で表示する（このページ内に表示）
-           1. Googleフォーム編集画面 →「送信」→「< >」(埋め込みHTML) を開く
-           2. 表示された <iframe ...></iframe> をコピー
-           3. 下の .form-embed 内、「Googleフォームをここに設置」コメントの
-              直後にある準備中パネル（.form-placeholder）を丸ごと削除し、
-              コピーした <iframe> を貼り付ける
-           4. iframe には class="form-embed__frame" を付けると、枠に
-              ぴったり収まりレスポンシブ対応になります。幅/高さの
-              width="640" height="800" などの属性は削除してOKです。
-              例）<iframe class="form-embed__frame" src="https://docs.google.com/forms/d/e/○○○/viewform?embedded=true">読み込んでいます…</iframe>
-
-         ■ 方法B：Googleフォームへのリンクボタンにする（別タブでフォームを開く）
-           - 埋め込みではなくボタンで飛ばしたい場合は、準備中パネルを
-             下記のようなリンクボタンに置き換えてください。
-             例）<p style="text-align:center"><a class="btn btn--primary btn--lg" href="GoogleフォームのURL" target="_blank" rel="noopener">お問い合わせフォームへ</a></p>
+         【開発者向けメモ】
+         現在はメール（k.seq.office@gmail.com）でのお問い合わせです。
+         将来 Google フォームを使う場合は、この .contact-card を
+         フォームの <iframe class="form-embed__frame"> 等に差し替えれば
+         レスポンシブ枠（.form-embed）のスタイルがそのまま使えます。
        ======================================================= -->
     <section class="section">
       <div class="container">
 
-        <div class="form-embed reveal">
-          <!-- Googleフォームをここに設置 -->
-          <div class="form-placeholder">
-            <p class="form-placeholder__title">お問い合わせフォームは現在準備中です</p>
-            <p class="form-placeholder__text">
-              準備が整い次第、こちらからお問い合わせいただけます。
-              いましばらくお待ちください。
-            </p>
-          </div>
+        <div class="contact-card reveal">
+          <p class="contact-card__label">Email</p>
+          <a class="contact-card__mail" href="mailto:k.seq.office@gmail.com?subject=%E7%A9%8D%E7%AE%97%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87%E3%83%BB%E3%81%8A%E8%A6%8B%E7%A9%8D%E3%82%8A">k.seq.office@gmail.com</a>
+          <p class="contact-card__note">
+            図面・対応してほしい工種・希望納期などを添えていただくと、
+            お見積りがスムーズです。対応可否のご相談だけでもお気軽にどうぞ。
+          </p>
+          <p class="contact-card__actions">
+            <a class="btn btn--primary btn--lg btn--arrow" href="mailto:k.seq.office@gmail.com?subject=%E7%A9%8D%E7%AE%97%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87%E3%83%BB%E3%81%8A%E8%A6%8B%E7%A9%8D%E3%82%8A">メールで問い合わせる</a>
+          </p>
+          <p class="contact-card__alt">
+            Instagram の DM でも受け付けています：
+            <a href="https://www.instagram.com/k.seq.office" target="_blank" rel="noopener noreferrer">@k.seq.office</a>
+          </p>
         </div>
 
       </div>
@@ -127,6 +117,13 @@
         <div>
           <p class="site-footer__brand-name">K.seq</p>
           <p class="site-footer__brand-sub">Structural Estimation</p>
+          <a class="footer-social" href="mailto:k.seq.office@gmail.com" aria-label="メールでお問い合わせ（k.seq.office@gmail.com）">
+            <svg class="footer-social__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>k.seq.office@gmail.com</span>
+          </a>
           <a class="footer-social" href="https://www.instagram.com/k.seq.office" target="_blank" rel="noopener noreferrer" aria-label="Instagram（@k.seq.office）を新しいタブで開く">
             <svg class="footer-social__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>

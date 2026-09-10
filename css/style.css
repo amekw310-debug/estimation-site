@@ -415,9 +415,11 @@ select:focus-visible {
   color: #8a90a1;
 }
 
-/* Instagram リンク（線画アイコン＋ハンドル） */
+/* フッターの連絡リンク（メール／Instagram：線画アイコン＋テキスト） */
 .footer-social {
-  display: inline-flex;
+  display: flex;
+  width: max-content;
+  max-width: 100%;
   align-items: center;
   gap: 8px;
   margin-top: 18px;
@@ -427,6 +429,7 @@ select:focus-visible {
   letter-spacing: 0.04em;
   transition: color 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
 }
+.footer-social + .footer-social { margin-top: 10px; }
 .footer-social__icon {
   width: 20px;
   height: 20px;
@@ -850,6 +853,49 @@ select:focus-visible {
   border-radius: var(--radius);
   background: var(--surface);
 }
+
+/* お問い合わせ（メール）カード */
+.contact-card {
+  max-width: 640px;
+  margin-inline: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 48px 32px;
+  text-align: center;
+}
+.contact-card__label {
+  margin: 0 0 14px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.contact-card__mail {
+  display: inline-block;
+  font-size: clamp(1.05rem, 0.9rem + 1vw, 1.4rem);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  word-break: break-all;
+}
+.contact-card__mail:hover { color: var(--accent); text-decoration: none; }
+.contact-card__note {
+  margin: 16px auto 28px;
+  max-width: 34em;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+}
+.contact-card__actions .btn { width: 100%; max-width: 360px; }
+.contact-card__alt {
+  margin: 28px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.contact-card__alt a { color: var(--accent); }
 
 /* フォーム準備中の仮パネル
    Google フォーム設置後は、このパネル（.form-placeholder）を
